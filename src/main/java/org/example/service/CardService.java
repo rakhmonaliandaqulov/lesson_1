@@ -74,8 +74,9 @@ public class CardService {
 
         int n = cardRepository.deleteCard(cardNumber);
         if (n != 0) {
-            System.out.println("Card deleted");
+//            System.out.println("Card deleted");
         }
+
     }
 
     public void adminCreateCard(String cardNumber, String expiredDate) {

@@ -3,14 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lang="http://www.springframework.org/schema/lang"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
 
-       <bean name="profileRepository" class="org.example.repository.ProfileRepository"/>
+       <bean name="authService" class="org.example.service.AuthService"/>
 
-       <bean name="authcontroller" class="org.example.controller.AuthController">
-              <property name="authService" ref="authService"/>
-       </bean>
+       <bean name="profileRepository" class="org.example.repository.ProfileRepository"/>
 
        <bean name="authService" class="org.example.service.AuthService">
               <property name="profileRepository" ref="profileRepository"/>
+       </bean>
+
+       <bean name="authcontroller" class="org.example.controller.AuthController">
+              <property name="authService" ref="authService"/>
        </bean>
 
 </beans>
